@@ -1,2 +1,17 @@
-<h1>Match#show_all</h1>
-<p>Find me in app/views/match/show_all.html.erb</p>
+<h1>Матчи</h1>
+
+<%= stylesheet_link_tag "show_match.css" %>
+
+<div class='today_matches'>
+<% @db.each do |zap| %>
+  <% @id = zap.id %>
+  <div class='one_match' id='<%= zap.id %>'>
+    <p class='sop'><%= zap.sop %></p>
+    <p class='style'><%= zap.style %></p>
+    <p class='schet'>Счет: <%= zap.schet%></p>
+    <%= button_to "Статистика", show_stat_url, method: :get, id: 'stat_button' %>
+    <%# <p><%button_to 'Статистика', %> 
+  </div>
+<% end %>
+</div>
+

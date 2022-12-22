@@ -1,0 +1,13 @@
+.today_matches {
+    display: flex;
+}
+
+.one_match {
+    background-color: #222;
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    margin-right: 10px;
+    text-align: center;
+    padding: 10px;
+}
