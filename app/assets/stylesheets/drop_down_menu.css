@@ -1,0 +1,51 @@
+.dropbtn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 60px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+    min-width: 30px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+}
+
+.dropdown-content button:hover {
+    background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.image_inside_btn {
+    width: 96px;
+    height: 96px;
+    border-radius: 60px;
+}
+
+.exit_btn {
+    background-color: lightgrey;
+    border: 0px;
+    padding: 10px;
+    padding-right: 25px;
+}

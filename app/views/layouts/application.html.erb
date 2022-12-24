@@ -7,16 +7,25 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "drop_down_menu" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <% if current_user %>
-      <span class="user_email" color='chocolate'><%= current_user.email %></span>
-      <%= button_to 'Выход', destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'sign_out_btn' %>
+      <nav class="navbar navbar-light bg-primary">
+        <div class="dropdown">
+          <button class="dropbtn"><%= image_tag "Ronaldo_and_Messi.png", class: "image_inside_btn"%></button><%= current_user.email %>
+          <div class="dropdown-content">
+            <%= link_to 'Профиль', '/user/profile', method: :get %>
+            <%= link_to 'Поиск', '/match/search', method: :get %>
+            <%= button_to 'Выход', destroy_user_session_path, data: { turbo: false }, method: :delete, class: "exit_btn" %>
+          </div>
+        </div>
+      </nav>
     <% end %>
+    <%# <p class="notice"><%= notice %>
+    <%# <p class="alert"><%= alert %>
     <%= yield %>
   </body>
 </html>
