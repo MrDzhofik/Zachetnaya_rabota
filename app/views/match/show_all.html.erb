@@ -4,13 +4,12 @@
 
 <div class='today_matches'>
 <% @db.each do |zap| %>
-  <% @id = zap.id %>
+  <% id = zap.id %>
   <div class='one_match' id='<%= zap.id %>'>
     <p class='sop'><%= zap.sop %></p>
     <p class='style'><%= zap.style %></p>
     <p class='schet'>Счет: <%= zap.schet%></p>
-    <%= button_to "Статистика", show_stat_url, method: :get, id: 'stat_button' %>
-    <%# <p><%button_to 'Статистика', %> 
+    <button><%= link_to "Статистика", "match/show_stat?id=#{id}", method: :get, id: 'stat_button', :style=>'color: black; text-decoration: none' %></button>
   </div>
 <% end %>
 </div>

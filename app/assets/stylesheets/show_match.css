@@ -1,3 +1,7 @@
+body {
+    background-image: url(stadium.jpeg);
+}
+
 .today_matches {
     display: flex;
 }

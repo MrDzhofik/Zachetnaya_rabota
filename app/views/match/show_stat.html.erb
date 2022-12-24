@@ -1,1 +1,36 @@
-<%# <% @match.sop %> %>
+<%= stylesheet_link_tag "show_stat.css" %>
+
+<div class='match container-sm'>
+  <div class='sop'>
+    <img src="https://pictures.sports.ru/imKSKhMWpi-HH14T3mQSy9KRXGD-8ifUnq8TCfzw25o/fill/150/150/no/1/czM6Ly9zdGF0X3BpY3R1cmUvVEVBTS9tYWluL2FyZ2VudGluYS00ODE5LmpwZWc.png" alt="Аргентина - logo" data-v-68275240="">
+    <img src="https://pictures.sports.ru/JtqbX2TCl9H0S2OO1ObwgyxQDq7ntDb7w4xkB7a3DAA/fill/150/151/no/1/czM6Ly9zdGF0X3BpY3R1cmUvVEVBTS9tYWluL2ZyYW5jZS5wbmc.png" alt="Франция - logo" data-v-68275240="">
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Владение мячом</p>
+    <span class='statik'><%= @vlad[0] %><span>
+    <span class='statik'><%= @vlad[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Удары в створ</p>
+    <span class='statik'><%= @udar_v_stvor[0] %><span>
+    <span class='statik'><%= @udar_v_stvor[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Удары мимо</p>
+    <span class='statik'><%= @udar_mimo[0] %><span>
+    <span class='statik'><%= @udar_mimo[0] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Угловые удары</p>
+    <span class='statik'><%= @ugol_udar[0] %><span>
+    <span class='statik'><%= @ugol_udar[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Штрафные удары</p>
+    <span class='statik'><%= @shtraf_udar[0] %><span>
+    <span class='statik'><%= @shtraf_udar[1] %><span>
+  </div>
+  <%= button_to 'Назад', root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
+</div>
+
+

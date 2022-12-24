@@ -1,0 +1,54 @@
+body {
+    background-image: url(stadium.jpeg);
+}
+
+.match {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px 16px;
+    background-color: var(--sports-grey-900, #222);
+    color: #fff;
+    margin-top: 20px;
+}
+
+.sop [data-v-68275240] {
+    width: 64px;
+}
+
+.sop img:last-child {
+    margin-left: 1155px;
+}
+
+.statistic span {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statistic span:first-child {
+    text-align: right;
+}
+
+.statistic:last-child {
+    text-align: left;
+}
+
+.text-center {
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 24px;
+}
+
+span {
+    font-size: 24px;
+}
+
+.back_to_all {
+    margin: 0 auto;
+    display: block;
+    padding-left: 50px;
+    padding-right: 50px;
+}

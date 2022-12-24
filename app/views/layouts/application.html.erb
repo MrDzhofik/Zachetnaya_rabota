@@ -14,8 +14,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if current_user %>
-      <%= current_user.email %>
-      <%= button_to 'Выход', destroy_user_session_path, method: :delete, data: { turbo: false } %>
+      <span class="user_email" color='chocolate'><%= current_user.email %></span>
+      <%= button_to 'Выход', destroy_user_session_path, method: :delete, data: { turbo: false }, class: 'sign_out_btn' %>
     <% end %>
     <%= yield %>
   </body>
