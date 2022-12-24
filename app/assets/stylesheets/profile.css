@@ -1,0 +1,11 @@
+.image {
+    float: right;
+}
+
+.about {
+    display: flex;
+}
+
+.text {
+    display: grid;
+}

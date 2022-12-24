@@ -13,11 +13,13 @@
 
   <body>
     <% if current_user %>
-      <nav class="navbar navbar-light bg-primary">
+      <nav class="navbar navbar-light">
+      <p class='user_username'><%= current_user.email.split('@')[0] %></p>
         <div class="dropdown">
-          <button class="dropbtn"><%= image_tag "Ronaldo_and_Messi.png", class: "image_inside_btn"%></button><%= current_user.email %>
+          <button class="dropbtn"><%= image_tag "Ronaldo_and_Messi.png", class: "image_inside_btn"%></button>
           <div class="dropdown-content">
-            <%= link_to 'Профиль', '/user/profile', method: :get %>
+            <%= link_to 'Профиль', "/user/profile?id=#{current_user.id}", method: :get %>
+            <%= link_to 'Матчи', root_path%>
             <%= link_to 'Поиск', '/match/search', method: :get %>
             <%= button_to 'Выход', destroy_user_session_path, data: { turbo: false }, method: :delete, class: "exit_btn" %>
           </div>

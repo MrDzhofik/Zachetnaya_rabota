@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "profile.css" %>
+<h1><%= @username %></h1>
+<div class='about'>
+    <div class='text'>
+        <span class='favsb'>Любимая сборная: <%= @fav_sb %></span>
+        <span class='guest'>Угаданных результатов: <%= @guest %></span>
+    </div>
+    <div class='image'>
+        <%= image_tag @avatar, class: "image", width: "40%" %>
+    </div>
+
+</div>
+</br>
+<%= link_to "Редактировать", edit_user_registration_path %>

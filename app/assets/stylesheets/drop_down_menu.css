@@ -5,6 +5,17 @@
     border-radius: 60px;
 }
 
+.user_username {
+    padding-top: 10px;
+    margin-left: 1700px;
+    font-size: 20px
+}
+
+.navbar {
+    background-color: darkred;
+}
+
+
 .dropdown {
     position: relative;
     display: inline-block;

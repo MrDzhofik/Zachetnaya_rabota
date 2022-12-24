@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'registrations/new'
+  get 'registrations/create'
+  get 'registrations/update'
+  get 'user/profile'
   resources :matches
-  devise_for :users
   get 'match/show_stat'
   root 'match#show_all'
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

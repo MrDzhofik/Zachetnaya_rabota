@@ -3,34 +3,56 @@ body {
 }
 
 .login_text {
-    color: chocolate
+    font-family: URW Chancery L;
+    font-size: 30px;
+    color: darkorange;
+}
+
+
+.form-check-label {
+    color: darkorange;
 }
 
 .login_form {
     position: fixed;
     /* or absolute */
+    background-color: #222;
     top: 50%;
     left: 50%;
-    width: 200px;
-    height: 100px;
-    transform: translate(-70%, -165%);
+    width: 500px;
+    height: 425px;
+    transform: translate(-50%, -50%);
+}
+
+.sign_in {
+    font-size: 20px;
+}
+
+.forgot_password {
+    font-size: 20px;
 }
 
 a {
     text-decoration: none;
-    color: #0f7afc;
-    border-bottom: 1px solid;
-    border-bottom-color: rgba(15, 122, 252, 0.2);
+    color: #f09206;
+    border-bottom: 2px solid;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
 }
 
-a:hover {
+.sign_in:hover {
     text-decoration: none;
     color: #cf0000;
-    border-bottom-color: rgba(208, 64, 0, 0.2);
+    border-bottom-color: rgba(3, 255, 36, 0.788);
+}
+
+.forgot_password:hover {
+    text-decoration: none;
+    color: #cf0000;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
 }
 
 a:visited {
     text-decoration: none;
-    color: #800080;
-    border-bottom-color: rgba(128, 0, 128, 0.2);
+    color: #61c4d1;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
 }
