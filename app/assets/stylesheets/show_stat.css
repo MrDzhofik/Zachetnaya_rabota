@@ -15,10 +15,6 @@ body {
     width: 64px;
 }
 
-.sop img:last-child {
-    margin-left: 1155px;
-}
-
 .statistic span {
     display: flex;
     box-sizing: border-box;
