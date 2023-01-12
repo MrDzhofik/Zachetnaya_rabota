@@ -37,6 +37,8 @@ class MatchController < ApplicationController
     end
   end
 
+  private
+
   def right_year
     @year = @years.split('-') 
     @year[0] = "#{@year[0]}-01-01"

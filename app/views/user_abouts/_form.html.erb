@@ -1,0 +1,34 @@
+<%= form_with(model: user_about) do |form| %>
+  <% if user_about.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_about.errors.count, "error") %> prohibited this user_about from being saved:</h2>
+
+      <ul>
+        <% user_about.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= form.label "Любимый клуб: ", class: 'login_text form-label' %>
+        <% teams = Team.all %>
+        <% teams_name = {} %>
+        <% teams.each do |team| %>
+          <% teams_name[team[:team_name]] = team[:id] %>
+        <% end %>
+
+        <%= form.select(:fav_club, ["Клуб", *teams_name]) %>
+  </div>
+
+  <div>
+    <%= form.label "Картинкa", class: 'login_text form-label' %><br /> 
+      <%= form.file_field :image, class: 'add_image_url' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Обновить'%>
+  </div>
+<% end %>

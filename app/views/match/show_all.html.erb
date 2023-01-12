@@ -3,7 +3,7 @@
 <%= stylesheet_link_tag "show_match.css" %>
 
 <div class="filters">
-  <%= form_tag("/match/filters", :method => :get) do %>
+   <%= form_tag("/match/filters", :method => :get) do %>
     <select name="team">
       <option value='' disabled selected>Команда</option>
       <%= options_for_select(@teams_name)%>

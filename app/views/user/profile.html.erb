@@ -2,13 +2,19 @@
 <h1><%= @username %></h1>
 <div class='about'>
     <div class='text'>
-        <span class='favsb'>Любимая сборная: <%= @fav_sb %></span>
-        <span class='guest'>Угаданных результатов: <%= @guest %></span>
+        <span class='favsb'>Любимая сборная: <%= @fav_club_name %></span>
+        <span class='guest'>Всего комментариев: <%= @guest %></span>
     </div>
-    <div class='image'>
-        <%= image_tag @avatar, class: "image", width: "40%" %>
-    </div>
+    <% if @curr_info.image.attached? %>
+        <div class='image'>
+            <%= image_tag @avatar, class: "image", width: "40%" %>
+        </div>
+    <% else %>
+        <div class='image'>
+            <%= image_tag 'Ronaldo_and_Messi.png', class: "image", width: "40%" %>
+        </div>
+    <% end %>
 
 </div>
 </br>
-<%= link_to "Редактировать", edit_user_registration_path %>
+<%= link_to "Редактировать", edit_user_about_path(current_user.id) %>

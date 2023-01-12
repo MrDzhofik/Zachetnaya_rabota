@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<h1>Информация о команде</h1>
 
-<%= render @team %>
+<%= stylesheet_link_tag "show_team.css" %>
 
-<div>
-  <%= link_to "Edit this team", edit_team_path(@team) %> |
-  <%= link_to "Back to teams", teams_path %>
 
-  <%= button_to "Destroy this team", @team, method: :delete %>
+<div class='today_matches'>
+  <div class='one_match'>
+    <p class='name'>Название команды: <%= @team_name %></p>
+    <p class='coach'> Тренер: <%= @coach %></p>
+    <p class='cap'>Капитан: <%= @capitan %></p>
+    <p class='year'>Год создания: <%= @year %></p>
+   <%= button_to 'Назад', root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
+  </div>
 </div>

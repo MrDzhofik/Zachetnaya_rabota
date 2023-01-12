@@ -1,14 +1,45 @@
-<p style="color: green"><%= notice %></p>
+<h1>Матчи</h1>
 
-<h1>Matches</h1>
+<%= stylesheet_link_tag "show_match.css" %>
 
-<div id="matches">
-  <% @matches.each do |match| %>
-    <%= render match %>
-    <p>
-      <%= link_to "Show this match", match %>
-    </p>
+<div class="filters">
+  <%= form_tag("/match/filters", :method => :get) do %>
+    <select name="team">
+      <option value='' disabled selected>Команда</option>
+      <%= options_for_select(@teams_name)%>
+    </select>
+    <select name="year">
+      <option value="" disabled selected>Сезон</option>
+      <option value='2018-2019'>18/19</option>
+      <option value='2019-2020'>19/20</option>
+      <option value='2020-2021'>20/21</option>
+      <option value='2021-2022'>21/22</option>
+      <option value='2022-2023'>22/23</option>
+    </select>
+    <select name="league">
+      <option value='' disabled selected>Лига</option>
+      <option value='Бауманская Футбольная Лига'>БФЛ</option>
+      <option value='Измайловская Футбольная Лига'>ИФЛ</option>
+      <option value='Лига Чемпионов'>ЛЧ</option>
+      <option value='Чемпионат Мира'>ЧМ22</option>
+    </select>
+    <select name="place">
+      <option value='home'>Дома</option>
+      <option value='guest'>В гостях</option>
+    </select>
+    <%= submit_tag('Искать', class: 'btn btn-success') %>
   <% end %>
 </div>
 
-<%= link_to "New match", new_match_path %>
+<div class='today_matches'>
+<% @db.each do |zap| %>
+  <% id = zap.id %>
+  <div class='one_match' id='<%= zap.id %>'>
+    <p class='sop'><%= @teams.find(zap[:sop1_id])[:team_name] %> - <%= @teams.find(zap[:sop2_id])[:team_name] %></p>
+    <p class='style'><%= zap.style %></p>
+    <p class='schet'>Счет: <%= zap.schet%></p>
+    <p class='date'>Дата: <%= zap.match_date %></p>
+    <button><%= link_to "Статистика", match_path(id), method: :get, id: 'stat_button', :style=>'color: black; text-decoration: none' %></button>
+  </div>
+<% end %>
+</div>

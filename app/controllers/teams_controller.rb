@@ -8,6 +8,11 @@ class TeamsController < ApplicationController
 
   # GET /teams/1 or /teams/1.json
   def show
+    @team = Team.find(params[:id])
+    @team_name = @team[:team_name]
+    @coach = @team[:coach]
+    @capitan = @team[:capitan]
+    @year = @team[:year_of_creation]
   end
 
   # GET /teams/new

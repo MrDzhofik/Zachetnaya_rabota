@@ -1,10 +1,62 @@
-<p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag "show_stat.css" %>
+<%= stylesheet_link_tag "comments.css" %>
 
-<%= render @match %>
-
-<div>
-  <%= link_to "Edit this match", edit_match_path(@match) %> |
-  <%= link_to "Back to matches", matches_path %>
-
-  <%= button_to "Destroy this match", @match, method: :delete %>
+<div class='match container-sm'>
+  <div class='statistic'>
+    <div class='sop'>
+      <span class='sop'><%= link_to @sop1[:team_name], team_path(@sop1) %>  <%= link_to @sop2[:team_name], team_path(@sop2) %></span>
+    </div>
+  </div>
+  <div class='statistic'>
+    <div class='schet'>
+      <p class='text-center st'>Cчет: <%= @match[:schet]%></p>
+    </div>
+  </div>
+  <div class='statistic'>
+    <p class='text-center st_title'>Статистика</p>
+    <p class='text-center'>Владение мячом</p>
+    <span class='statik'><%= @vlad[0] %><span>
+    <span class='statik'><%= @vlad[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Удары в створ</p>
+    <span class='statik'><%= @udar_v_stvor[0] %><span>
+    <span class='statik'><%= @udar_v_stvor[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Удары мимо</p>
+    <span class='statik'><%= @udar_mimo[0] %><span>
+    <span class='statik'><%= @udar_mimo[0] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Угловые удары</p>
+    <span class='statik'><%= @ugol_udar[0] %><span>
+    <span class='statik'><%= @ugol_udar[1] %><span>
+  </div>
+  <div class='statistic'>
+    <p class='text-center'>Штрафные удары</p>
+    <span class='statik'><%= @shtraf_udar[0] %><span>
+    <span class='statik'><%= @shtraf_udar[1] %><span>
+  </div>
+  <%= button_to 'Назад', root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
 </div>
+
+<div class='comments'>
+  <h2>Комментарии</h2>
+  <%= @match.comments.each do |comment| %>
+    <div>
+      <strong><%= comment.title %></strong>
+      <i><%= comment.body %></i>
+    </div>
+  <% end %>
+</div>
+  <h2>Добавить комментарий</h2>
+  <div class="create_comment">
+    <%= form_with(model: [@match, @match.comments.build]) do |f| %>
+      <p>Заголовок</p>
+      <%= f.text_field(:title) %>
+      <p>Текст</p>
+      <%= f.text_field(:body) %>
+      <%= f.submit 'Отправить'%>
+    <% end %>
+  </div>

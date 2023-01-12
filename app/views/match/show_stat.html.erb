@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "show_stat.css" %>
+<%= stylesheet_link_tag "comments.css" %>
 
 <div class='match container-sm'>
   <div class='statistic'>
@@ -39,5 +40,26 @@
   </div>
   <%= button_to 'Назад', root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
 </div>
+
+<div class='comments'>
+  <h2>Комментарии</h2>
+  <%= @match.comments.each do |comment| %>
+    <div>
+      <strong><%= comment.title %></strong>
+      <i><%= comment.body %></i>
+    </div>
+  <% end %>
+</div>
+  <h2>Добавить комментарий</h2>
+  <div class="create_comment">
+    <%= form_for [@match, @match.comments.build] do |f| %>
+      <p>Заголовок</p>
+      <%= f.text_field(:title) %>
+      <p>Текст</p>
+      <%= f.text_field(:body) %>
+      <%= f.submit 'Отправить'%>
+    <% end %>
+  </div>
+
 
 
