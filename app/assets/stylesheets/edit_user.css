@@ -1,0 +1,58 @@
+body {
+    background-image: url(stadium.jpeg);
+}
+
+.login_text {
+    font-family: URW Chancery L;
+    font-size: 30px;
+    color: darkorange;
+}
+
+
+.form-check-label {
+    color: darkorange;
+}
+
+.login_form {
+    position: fixed;
+    /* or absolute */
+    background-color: #222;
+    top: 60%;
+    left: 50%;
+    width: 500px;
+    height: 575px;
+    transform: translate(-50%, -50%);
+}
+
+.sign_in {
+    font-size: 20px;
+}
+
+.forgot_password {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #f09206;
+    border-bottom: 2px solid;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
+}
+
+.sign_in:hover {
+    text-decoration: none;
+    color: #cf0000;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
+}
+
+.forgot_password:hover {
+    text-decoration: none;
+    color: #cf0000;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
+}
+
+a:visited {
+    text-decoration: none;
+    color: #61c4d1;
+    border-bottom-color: rgba(3, 255, 36, 0.788);
+}

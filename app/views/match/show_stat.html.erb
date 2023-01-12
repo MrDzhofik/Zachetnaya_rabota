@@ -1,11 +1,18 @@
 <%= stylesheet_link_tag "show_stat.css" %>
 
 <div class='match container-sm'>
-  <div class='sop'>
-    <img src="https://pictures.sports.ru/imKSKhMWpi-HH14T3mQSy9KRXGD-8ifUnq8TCfzw25o/fill/150/150/no/1/czM6Ly9zdGF0X3BpY3R1cmUvVEVBTS9tYWluL2FyZ2VudGluYS00ODE5LmpwZWc.png" alt="Аргентина - logo" data-v-68275240="">
-    <img src="https://pictures.sports.ru/JtqbX2TCl9H0S2OO1ObwgyxQDq7ntDb7w4xkB7a3DAA/fill/150/151/no/1/czM6Ly9zdGF0X3BpY3R1cmUvVEVBTS9tYWluL2ZyYW5jZS5wbmc.png" alt="Франция - logo" data-v-68275240="">
+  <div class='statistic'>
+    <div class='sop'>
+      <span class='sop'><%= link_to @sop1[:team_name], "/team/show?id=#{@sop1[:id]}" %>  <%= link_to @sop2[:team_name], "/team/show?id=#{@sop2[:id]}" %></span>
+    </div>
   </div>
   <div class='statistic'>
+    <div class='schet'>
+      <p class='text-center st'>Cчет: <%= @match[:schet]%></p>
+    </div>
+  </div>
+  <div class='statistic'>
+    <p class='text-center st_title'>Статистика</p>
     <p class='text-center'>Владение мячом</p>
     <span class='statik'><%= @vlad[0] %><span>
     <span class='statik'><%= @vlad[1] %><span>

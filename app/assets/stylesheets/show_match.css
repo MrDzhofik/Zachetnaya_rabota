@@ -3,7 +3,8 @@ body {
 }
 
 .today_matches {
-    display: flex;
+    display: block ruby;
+    margin-left: 10px;
 }
 
 .one_match {
@@ -12,11 +13,20 @@ body {
     border-width: 2px;
     border-color: brown;
     border-style: solid;
-    margin-right: 10px;
+    margin-right: 5px;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 225px;
+    margin-left: 10px;
+    margin-top: 5px;
+    float: left;
 }
 
 h1 {
     color: orangered;
+}
+
+p {
+    margin-bottom: 7.5px;
 }

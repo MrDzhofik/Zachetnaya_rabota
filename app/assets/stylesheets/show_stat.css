@@ -11,8 +11,8 @@ body {
     margin-top: 20px;
 }
 
-.sop [data-v-68275240] {
-    width: 64px;
+.sop {
+    text-align: center;
 }
 
 .statistic span {
@@ -47,4 +47,8 @@ span {
     display: block;
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.st {
+    font-size: 35px;
 }

@@ -1,0 +1,36 @@
+body {
+    background-image: url(stadium.jpeg);
+}
+
+.one_match {
+    background-color: #222;
+    color: white;
+    border-width: 2px;
+    border-color: brown;
+    border-style: solid;
+    text-align: center;
+    padding: 20px;
+    width: 450px;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.one_match p {
+    font-size: 24px;
+}
+
+.one_match button {
+    font-size: 24px;
+}
+
+h1 {
+    color: orangered;
+}
+
+.back_to_all {
+    margin: 0 auto;
+    display: block;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: none;
+}

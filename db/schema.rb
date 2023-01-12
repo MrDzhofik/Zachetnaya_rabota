@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_24_115742) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_12_155301) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,12 +39,35 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_24_115742) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title"
+    t.text "body"
+    t.integer "match_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_comments_on_match_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "matches", force: :cascade do |t|
     t.string "sop"
     t.string "schet"
     t.boolean "shotout"
     t.string "style"
     t.string "statistic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sop1_id", null: false
+    t.integer "sop2_id", null: false
+    t.date "match_date"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "team_name", null: false
+    t.string "coach"
+    t.string "capitan"
+    t.integer "year_of_creation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,4 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_24_115742) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "matches"
+  add_foreign_key "comments", "users"
 end

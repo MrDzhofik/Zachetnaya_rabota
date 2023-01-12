@@ -74,6 +74,7 @@ end
 
 
 gem 'devise'
+gem 'faker'
 
 gem 'bootstrap'
 gem 'jquery-rails'
