@@ -37,59 +37,62 @@ require 'faker'
 
 #Creating Matches
 # Бауманская футбольная лига
-teams_id = [*1..10]
-style = %w[БФЛ ИФЛ ЛЧ]
+# teams_id = [*1..10]
+# style = %w[БФЛ ИФЛ ЛЧ]
 
-(1..20).each do |id|
-    team_id = teams_id
-    sop1 = rand(1..10)
-    team_id -= [sop1]
-    sop2 = team_id.sample
-    vladenie1 = rand(20..100)
-    vladenie2 = 100 - vladenie1
-    vlad = "#{vladenie1} #{vladenie2}"
-    udar_v_stvor = "#{rand(12)} #{rand(12)}"
-    udar_mimo = "#{rand(25)} #{rand(25)}"
-    ugol_udar = "#{rand(10)} #{rand(10)}"
-    shtraf_udar = "#{rand(7)} #{rand(7)}"
-    Match.create!(
-        id: id,
-        schet: "#{rand(6)}-#{rand(5)}",
-        style: "БФЛ",
-        shotout: false,
-        statistic: "#{vlad}, #{udar_v_stvor}, #{udar_mimo}, #{ugol_udar}, #{shtraf_udar}",
-        sop1_id: sop1,
-        sop2_id: sop2,
-        match_date: Faker::Date.between(from: '2018-01-3', to: '2018-06-14')
-    )
-end
+# (1..20).each do |id|
+#     team_id = teams_id
+#     sop1 = rand(1..10)
+#     team_id -= [sop1]
+#     sop2 = team_id.sample
+#     vladenie1 = rand(20..100)
+#     vladenie2 = 100 - vladenie1
+#     vlad = "#{vladenie1} #{vladenie2}"
+#     udar_v_stvor = "#{rand(12)} #{rand(12)}"
+#     udar_mimo = "#{rand(25)} #{rand(25)}"
+#     ugol_udar = "#{rand(10)} #{rand(10)}"
+#     shtraf_udar = "#{rand(7)} #{rand(7)}"
+#     Match.create!(
+#         id: id,
+#         schet: "#{rand(6)}-#{rand(5)}",
+#         style: "БФЛ",
+#         shotout: false,
+#         statistic: "#{vlad}, #{udar_v_stvor}, #{udar_mimo}, #{ugol_udar}, #{shtraf_udar}",
+#         sop1_id: sop1,
+#         sop2_id: sop2,
+#         match_date: Faker::Date.between(from: '2018-01-3', to: '2018-06-14')
+#     )
+# end
 
 # Измайловская футбольная лига
-teams_id = [*10..20]
-style = %w[БФЛ ИФЛ ЛЧ]
+# teams_id = [*10..20]
+# style = %w[БФЛ ИФЛ ЛЧ]
 
-(1..20).each do |id|
-    team_id = teams_id
-    sop1 = rand(10..20)
-    team_id -= [sop1]
-    sop2 = team_id.sample
-    vladenie1 = rand(20..100)
-    vladenie2 = 100 - vladenie1
-    vlad = "#{vladenie1} #{vladenie2}"
-    udar_v_stvor = "#{rand(12)} #{rand(12)}"
-    udar_mimo = "#{rand(25)} #{rand(25)}"
-    ugol_udar = "#{rand(10)} #{rand(10)}"
-    shtraf_udar = "#{rand(7)} #{rand(7)}"
-    Match.create!(
-        id: id + 20,
-        schet: "#{rand(6)}-#{rand(5)}",
-        style: "ИФЛ",
-        shotout: false,
-        statistic: "#{vlad}, #{udar_v_stvor}, #{udar_mimo}, #{ugol_udar}, #{shtraf_udar}",
-        sop1_id: sop1,
-        sop2_id: sop2,
-        match_date: Faker::Date.between(from: '2018-01-3', to: '2018-06-14')
-    )
+# (1..20).each do |id|
+#     team_id = teams_id
+#     sop1 = rand(10..20)
+#     team_id -= [sop1]
+#     sop2 = team_id.sample
+#     vladenie1 = rand(20..100)
+#     vladenie2 = 100 - vladenie1
+#     vlad = "#{vladenie1} #{vladenie2}"
+#     udar_v_stvor = "#{rand(12)} #{rand(12)}"
+#     udar_mimo = "#{rand(25)} #{rand(25)}"
+#     ugol_udar = "#{rand(10)} #{rand(10)}"
+#     shtraf_udar = "#{rand(7)} #{rand(7)}"
+#     Match.create!(
+#         id: id + 20,
+#         schet: "#{rand(6)}-#{rand(5)}",
+#         style: "ИФЛ",
+#         shotout: false,
+#         statistic: "#{vlad}, #{udar_v_stvor}, #{udar_mimo}, #{ugol_udar}, #{shtraf_udar}",
+#         sop1_id: sop1,
+#         sop2_id: sop2,
+#         match_date: Faker::Date.between(from: '2018-01-3', to: '2018-06-14')
+#     )
+# end
+
+# Заполним user_about
+4.times do |num|
+    UserAbout.create!(user_id: num + 2)
 end
-
-# Лига Чемпионов
