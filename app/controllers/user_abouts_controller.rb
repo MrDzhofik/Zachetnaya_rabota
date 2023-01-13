@@ -41,7 +41,6 @@ class UserAboutsController < ApplicationController
     respond_to do |format|
       if @user_about.update(user_about_params)
         format.html { redirect_to root_path, notice: "User about was successfully updated." }
-        format.json { render :show, status: :ok, location: @user_about }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user_about.errors, status: :unprocessable_entity }

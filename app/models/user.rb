@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :comments
-  has_one :user_about, :dependent => :destroy
+  has_one :user_about
   after_create :create_user_about
   # after_update :update_user_about
 

@@ -1,10 +1,24 @@
 <%= stylesheet_link_tag "profile.css" %>
 <h1><%= @username %></h1>
 <div class='about'>
-    <div class='text'>
-        <span class='favsb'><%= "#{t('fav_club')}"%>: <%= @fav_club_name %></span>
-        <span class='guest'><%= "#{t('comments_count')}"%>: <%= @guest %></span>
-    </div>
+    <table class="table table-hover" style="width: 540px">
+      <tr>
+        <td>
+          <%= "#{t('fav_club')}"%>:
+        </td>
+        <td> 
+          <span class='favsb'><%= @fav_club_name %></span> 
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= "#{t('comments_count')}"%>:
+        </td>
+        <td>
+          <span class='guest'> <%= @guest %></span>
+        </td>
+      </tr>
+    </table>
     <% if @curr_info.image.attached? %>
         <div class='image'>
             <%= image_tag @avatar, class: "image", width: "40%" %>

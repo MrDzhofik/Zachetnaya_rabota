@@ -11,6 +11,7 @@ describe 'Loginwithinvalidpassword' do
     @driver.quit
   end
   it 'visit root_path before authorizing' do
+    sleep(1)
     @driver.get('localhost:3000/')
     expect(@driver.find_element(:css, '.alert').text).to eq("translation missing: ru.devise.failure.user.unauthenticated")
   end
@@ -41,13 +42,11 @@ describe 'Loginwithinvalidpassword' do
     @driver.get('localhost:3000/')
     @driver.find_element(:css, '.sign_in').click
     sleep(1)
-    @driver.find_element(:id, 'user_email').send_keys('gav10@example.com')
+    @driver.find_element(:id, 'user_email').send_keys('gav13@example.com')
     @driver.find_element(:id, 'user_password').send_keys('123456')
     @driver.find_element(:id, 'user_password_confirmation').send_keys('123456')
     @driver.find_element(:name, 'commit').click
     sleep(2)
     expect(@driver.find_element(:css, 'h1').text).to eq("Матчи")
   end
-
-
 end

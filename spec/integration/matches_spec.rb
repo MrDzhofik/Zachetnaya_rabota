@@ -39,7 +39,7 @@ describe 'Matches' do
     sleep(1)
     @driver.find_element(:name, "commit").click
     sleep(1)
-    expect(@driver.find_element(:xpath, '//h1[2]').text).to eq("Команда: Liverpool")
+    expect(@driver.find_element(:xpath, '//h1[3]').text).to eq("Название команды: Liverpool")
   end
 
   it 'show team' do
@@ -55,15 +55,15 @@ describe 'Matches' do
     expect(@driver.find_element(:xpath, '//h1').text).to eq("Информация о команде")
   end
 
-  # it 'show user profile' do
-  #   @driver.get('localhost:3000/')
-  #   @driver.find_element(:id, 'user_email').send_keys('milka@mail.ru')
-  #   @driver.find_element(:id, 'user_password').send_keys('123456')
-  #   @driver.find_element(:name, 'commit').click
-  #   sleep(1)
-  #   @driver.find_element(:css, ".image_inside_btn").click
-  #   @driver.find_element(:xpath, "//a[contains(text(),'Профиль')]").click
-  #   sleep(1)
-  #   expect(@driver.find_element(:css, '.favsb').text).to eq('Любимый клуб:')
-  # end
+  it 'show user profile' do
+    @driver.get('localhost:3000/')
+    @driver.find_element(:id, 'user_email').send_keys('milka@mail.ru')
+    @driver.find_element(:id, 'user_password').send_keys('123456')
+    @driver.find_element(:name, 'commit').click
+    sleep(1)
+    @driver.find_element(:css, ".image_inside_btn").click
+    @driver.find_element(:xpath, "//a[contains(text(),'Профиль')]").click
+    sleep(2)
+    expect(@driver.find_element(:css, '.favsb').text).to eq('Любимый клуб:')
+  end
 end

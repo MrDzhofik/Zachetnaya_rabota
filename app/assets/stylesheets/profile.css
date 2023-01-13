@@ -1,11 +1,11 @@
-.image {
+.table {
     float: right;
 }
 
-/* .about {
+.about {
     display: flex;
-} */
+}
 
-.text {
-    display: grid;
+.image {
+    display: left;
 }
