@@ -73,7 +73,6 @@ class MatchesController < ApplicationController
   def filters
     @teams = Team.all
     @team_id = params[:team]
-    p @team_id
     @team_id = 1 if @team_id
     @team_name = Team.find(@team_id)[:team_name]  if @team_id
     @years = params[:year]
@@ -87,7 +86,6 @@ class MatchesController < ApplicationController
     else
       search_guest
     end
-    p @need_matches.class
   end
 
   private

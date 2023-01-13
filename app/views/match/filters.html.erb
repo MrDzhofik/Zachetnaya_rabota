@@ -14,7 +14,7 @@
 <% end %>
 <%= button_to "#{t('back')}", root_path, method: :get %>
 
-<% if @array[0].length >= 1 %>
+<% if @array < 180 %>
   <div class='today_matches'>
     <% @need_matches.each do |zap| %>
     <% id = zap.id %>

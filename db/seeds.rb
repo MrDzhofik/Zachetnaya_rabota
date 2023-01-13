@@ -58,7 +58,7 @@ players.uniq!
 teams_id = [*1..10]
 style = %w[БФЛ ИФЛ ЛЧ]
 
-(1..20).each do |id|
+(1..50).each do |id|
     team_id = teams_id
     sop1 = rand(1..10)
     team_id -= [sop1]
@@ -71,7 +71,7 @@ style = %w[БФЛ ИФЛ ЛЧ]
     ugol_udar = "#{rand(10)} #{rand(10)}"
     shtraf_udar = "#{rand(7)} #{rand(7)}"
     Match.create!(
-        id: id + 100,
+        id: id + 300,
         schet: "#{rand(6)}-#{rand(5)}",
         style: "БФЛ",
         shotout: false,
@@ -86,7 +86,7 @@ end
 teams_id = [*10..20]
 style = %w[БФЛ ИФЛ ЛЧ]
 
-(1..20).each do |id|
+(1..50).each do |id|
     team_id = teams_id
     sop1 = rand(10..20)
     team_id -= [sop1]
@@ -99,14 +99,14 @@ style = %w[БФЛ ИФЛ ЛЧ]
     ugol_udar = "#{rand(10)} #{rand(10)}"
     shtraf_udar = "#{rand(7)} #{rand(7)}"
     Match.create!(
-        id: id + 200,
+        id: id + 400,
         schet: "#{rand(6)}-#{rand(5)}",
         style: "ИФЛ",
         shotout: false,
         statistic: "#{vlad}, #{udar_v_stvor}, #{udar_mimo}, #{ugol_udar}, #{shtraf_udar}",
         sop1_id: sop1,
         sop2_id: sop2,
-        match_date: Faker::Date.between(from: '2018-01-3', to: '2018-06-14')
+        match_date: Faker::Date.between(from: '2018-01-3', to: '2022-06-14')
     )
 end
 
