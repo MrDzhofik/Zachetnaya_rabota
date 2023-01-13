@@ -1,8 +1,11 @@
-<h1>Editing user about</h1>
+<%= stylesheet_link_tag "signup.css" %>
+<div class='login_form container'>
+  <h2 class='login_text'><%= "#{t('fav_club')}"%></h2>
 
-<%= render "form", user_about: @user_about %>
+  <%= render "form", user_about: @user_about %>
 
-<br>
+</div>
+
 
 
 

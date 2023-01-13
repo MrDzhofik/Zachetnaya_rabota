@@ -28,6 +28,7 @@ class MatchController < ApplicationController
     @league = params[:league]
     @place = params[:place]
     @need_matches = Match
+    @array = []
     right_year if @years
     right_league if @league
     if @place == 'home'
@@ -35,6 +36,7 @@ class MatchController < ApplicationController
     else
       search_guest
     end
+    @array.push(@need_matches)
   end
 
   private

@@ -1,0 +1,53 @@
+ru:
+  email: 'Почта'
+  log_in: "Войти"
+  log_in1: "Вход"
+  pass_word: "Пароль"
+  remember_me: "Запомнить"
+  sign_up: "Зарегистрироваться" 
+  sign_up1: "Регистрация" 
+  forgot_password: "Забыли пароль?"
+  confirm_instr: "Не получили инструкции по подтверждению?"
+  unlock_instr: "Не получили инструкции по разблокировке?"
+  user_name: "Имя пользователя"
+  pass_conf: "Подтвердите пароль"
+  characters_minimum: "6 символов минимум"
+  resend_conf_instr: "Повторно отправить инструкции по подтверждению"
+  edit_user: "Изменить профиль"
+  curr_pass: "Текущий пароль"
+  update: "Изменить"
+  cancel_account: "Удалить аккаунт"
+  back: "Назад"
+  schet: "Счет"
+  date: "Дата"
+  statistic: "Статистика"
+  match: "Матчи"
+  team: 'Команда'
+  season: 'Сезон'
+  league: 'Лига'
+  league_b: 'БФЛ'
+  league_i: 'ИФЛ'
+  league_ch: 'ЧМ'
+  place_home: 'Дома'
+  place_guest: 'В гостях'
+  search: 'Искать'
+  profile: 'Профиль'
+  matches: 'Матчи'
+  exit: 'Выход'
+  fav_club: 'Любимый клуб'
+  comments_count: 'Всего комментариев'
+  edit_user_about: 'Изменение дополнительных настроек пользователя'
+  possesion: 'Владение мячом'
+  udar_v_stvor: "Удары в створ"
+  udar_mimo: "Удары мимо"
+  ugol_udar: "Угловые удары"
+  shtraf_udar: "Штрафные удары"
+  team_name: 'Название команды'
+  coach: 'Тренер'
+  cap: 'Капитан'
+  year_of_creation: 'Год создания'
+  team_info: 'Информация о команде'
+  no_matches: "Нет матчей, удовлетворяющих данным требованиям ;("
+  picture: "Картинка"
+  advanced: 'Продвинутые изменения'
+

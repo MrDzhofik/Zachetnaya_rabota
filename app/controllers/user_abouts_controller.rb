@@ -17,6 +17,8 @@ class UserAboutsController < ApplicationController
 
   # GET /user_abouts/1/edit
   def edit
+    user_id = params[:user_id]
+    team_id = params[:team_id]
   end
 
   # POST /user_abouts or /user_abouts.json

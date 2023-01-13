@@ -73,11 +73,13 @@ class MatchesController < ApplicationController
   def filters
     @teams = Team.all
     @team_id = params[:team]
+    p @team_id
+    @team_id = 1 if @team_id
     @team_name = Team.find(@team_id)[:team_name]  if @team_id
     @years = params[:year]
     @league = params[:league]
     @place = params[:place]
-    @need_matches = Match
+    @need_matches = Match.all
     right_year if @years
     right_league if @league
     if @place == 'home'
@@ -85,6 +87,7 @@ class MatchesController < ApplicationController
     else
       search_guest
     end
+    p @need_matches.class
   end
 
   private
@@ -114,7 +117,7 @@ class MatchesController < ApplicationController
     end
 
     def search
-      @need_matches = @need_matches.where(match_date: @year[0]..@year[2]) if @years
+      @need_matches = @need_matches.where(match_date: @year[0]..@year[1]) if @years
       @need_matches = @need_matches.where(style: @leag) if @league
     end
 

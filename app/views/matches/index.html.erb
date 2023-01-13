@@ -1,15 +1,15 @@
-<h1>Матчи</h1>
+<h1><%="#{t('matches')}"%></h1>
 
 <%= stylesheet_link_tag "show_match.css" %>
 
 <div class="filters">
   <%= form_tag("/match/filters", :method => :get) do %>
     <select name="team">
-      <option value='' disabled selected>Команда</option>
+      <option value='' disabled selected><%="#{t('team')}"%></option>
       <%= options_for_select(@teams_name)%>
     </select>
     <select name="year">
-      <option value="" disabled selected>Сезон</option>
+      <option value="" disabled selected><%="#{t('season')}"%></option>
       <option value='2018-2019'>18/19</option>
       <option value='2019-2020'>19/20</option>
       <option value='2020-2021'>20/21</option>
@@ -17,17 +17,15 @@
       <option value='2022-2023'>22/23</option>
     </select>
     <select name="league">
-      <option value='' disabled selected>Лига</option>
-      <option value='Бауманская Футбольная Лига'>БФЛ</option>
-      <option value='Измайловская Футбольная Лига'>ИФЛ</option>
-      <option value='Лига Чемпионов'>ЛЧ</option>
-      <option value='Чемпионат Мира'>ЧМ22</option>
+      <option value='' disabled selected><%="#{t('league')}"%></option>
+      <option value='Бауманская Футбольная Лига'><%="#{t('league_b')}"%></option>
+      <option value='Измайловская Футбольная Лига'><%="#{t('league_i')}"%></option>
     </select>
     <select name="place">
-      <option value='home'>Дома</option>
-      <option value='guest'>В гостях</option>
+      <option value='home'><%="#{t('place_home')}"%></option>
+      <option value='guest'><%="#{t('place_guest')}"%></option>
     </select>
-    <%= submit_tag('Искать', class: 'btn btn-success') %>
+    <%= submit_tag( "#{t('search')}", class: 'btn btn-success') %>
   <% end %>
 </div>
 
@@ -37,9 +35,9 @@
   <div class='one_match' id='<%= zap.id %>'>
     <p class='sop'><%= @teams.find(zap[:sop1_id])[:team_name] %> - <%= @teams.find(zap[:sop2_id])[:team_name] %></p>
     <p class='style'><%= zap.style %></p>
-    <p class='schet'>Счет: <%= zap.schet%></p>
-    <p class='date'>Дата: <%= zap.match_date %></p>
-    <button><%= link_to "Статистика", match_path(id), method: :get, id: 'stat_button', :style=>'color: black; text-decoration: none' %></button>
+    <p class='schet'><%= "#{t('schet')}" %>: <%= zap.schet%></p>
+    <p class='date'><%= "#{t('date')}" %>: <%= zap.match_date %></p>
+    <button><%= link_to "#{t('statistic')}", match_path(locale, id), method: :get, id: 'stat_button', :style=>'color: black; text-decoration: none' %></button>
   </div>
 <% end %>
 </div>

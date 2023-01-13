@@ -10,25 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-
-  <div>
-    <%= form.label "Любимый клуб: ", class: 'login_text form-label' %>
+  
+  <div class="field mb-3">
+        
         <% teams = Team.all %>
         <% teams_name = {} %>
         <% teams.each do |team| %>
           <% teams_name[team[:team_name]] = team[:id] %>
         <% end %>
 
-        <%= form.select(:fav_club, ["Клуб", *teams_name]) %>
-  </div>
+        <%= form.select(:favorsb, ["#{t('team')}", *teams_name]) %>
+    </div>
 
-  <div>
-    <%= form.label "Картинкa", class: 'login_text form-label' %><br /> 
+    <div class="field mb-3">
+      <%= form.label "#{t('picture')}", class: 'login_text form-label' %><br /> 
       <%= form.file_field :image, class: 'add_image_url' %>
-  </div>
+    </div>
 
-  <div>
-    <%= form.submit 'Обновить'%>
-  </div>
+    <div class="actions">
+      <%= form.submit "#{t('update')}", method: :get, class: 'btn btn-primary' %>
+    </div> 
 <% end %>
+</div>

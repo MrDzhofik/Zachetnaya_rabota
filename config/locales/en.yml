@@ -30,4 +30,55 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  email: 'Email'
+  log_in: "Login"
+  log_in1: "Login"
+  pass_word: "Password"
+  remember_me: "Remember"
+  sign_up: "Register"
+  sign_up1: "Register" 
+  forgot_password: "Forgot password?"
+  confirm_instr: "Didn't receive confirmation instructions?"
+  unlock_instr: "Didn't receive unlock instructions?"
+  user_name: "Username"
+  pass_conf: "Confirm password"
+  characters_minimum: "minimum characters"
+  resend_conf_instr: "Resend confirmation instructions"
+  edit_user: "Change profile"
+  curr_pass: "Current password"
+  update: "Edit"
+  back: "Back"
+  submit: "Confirm"
+  show_button: "Open"
+  schet: "Score"
+  date: "Date"
+  statistic: "Statistics"
+  match: "Match"
+  team: 'Team'
+  season: 'Season'
+  league: 'League'
+  league_b: 'BFL'
+  league_i: 'IFL'
+  league_ch: 'WC'
+  place_home: 'Home'
+  place_guest: 'Guest'
+  search: 'Search'
+  profile: 'Profile'
+  matches: 'Matches'
+  exit: 'Exit'
+  fav_club: 'Favorite club'
+  comments_count: 'Comments count'
+  edit_user_about: 'Edit user_about'
+  possesion: 'Possesion'
+  udar_v_stvor: 'Shots on target'
+  udar_mimo: 'Shots off-target '
+  ugol_udar: 'Corner kicks'
+  shtraf_udar: 'Free kick'
+  team_name: 'Team name'
+  coach: 'Coach'
+  cap: 'Capitan'
+  year_of_creation: 'Year of creation'
+  team_info: 'Info about team'
+  no_matches: "No matches"
+  picture: "Picture"
+  advanced: 'Advanced options'

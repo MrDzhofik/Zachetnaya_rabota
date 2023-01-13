@@ -2,8 +2,8 @@
 <h1><%= @username %></h1>
 <div class='about'>
     <div class='text'>
-        <span class='favsb'>Любимая сборная: <%= @fav_club_name %></span>
-        <span class='guest'>Всего комментариев: <%= @guest %></span>
+        <span class='favsb'><%= "#{t('fav_club')}"%>: <%= @fav_club_name %></span>
+        <span class='guest'><%= "#{t('comments_count')}"%>: <%= @guest %></span>
     </div>
     <% if @curr_info.image.attached? %>
         <div class='image'>
@@ -11,10 +11,10 @@
         </div>
     <% else %>
         <div class='image'>
-            <%= image_tag 'Ronaldo_and_Messi.png', class: "image", width: "40%" %>
+            <%= image_tag 'ampbil.jpeg', class: "image", width: "40%" %>
         </div>
     <% end %>
 
 </div>
 </br>
-<%= link_to "Редактировать", edit_user_about_path(current_user.id) %>
+<%= button_to "#{t('update')}", edit_user_about_path(locale, current_user.id), method: :get %>

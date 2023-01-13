@@ -2,12 +2,12 @@
 
 <%= stylesheet_link_tag "signup.css" %>
 <div class='login_form container'>
-  <h2  class='login_text'>Продвинутые изменения</h2>
+  <h2 class='login_text'><%= "#{t('fav_club')}"%></h2>
 
   <%= form_with(model: @user_dop_info, url: user_about_path) do |f| %>
   
 <div class="field mb-3">
-        <%= f.label "Любимый клуб: ", class: 'login_text form-label' %>
+        <%= f.label "#{t('fav_club')}", class: 'login_text form-label' %>
         <% teams = Team.all %>
         <% teams_name = {} %>
         <% teams.each do |team| %>
@@ -18,12 +18,12 @@
     </div>
 
     <div class="field mb-3">
-      <%= f.label "Картинку", class: 'login_text form-label' %><br /> 
+      <%= f.label "#{t('picture')}", class: 'login_text form-label' %><br /> 
       <%= f.file_field :image, class: 'add_image_url' %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Подтвердить", class: 'btn btn-primary' %>
+      <%= f.submit "#{t('submit')}", class: 'btn btn-primary' %>
     </div>
 <% end %>
 </div>

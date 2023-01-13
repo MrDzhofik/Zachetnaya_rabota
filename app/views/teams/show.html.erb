@@ -1,14 +1,14 @@
-<h1>Информация о команде</h1>
+<h1><%= "#{t('team_info')}" %></h1>
 
 <%= stylesheet_link_tag "show_team.css" %>
 
 
 <div class='today_matches'>
   <div class='one_match'>
-    <p class='name'>Название команды: <%= @team_name %></p>
-    <p class='coach'> Тренер: <%= @coach %></p>
-    <p class='cap'>Капитан: <%= @capitan %></p>
-    <p class='year'>Год создания: <%= @year %></p>
-   <%= button_to 'Назад', root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
+    <p class='name'><%= "#{t('team_name')}" %>: <%= @team_name %></p>
+    <p class='coach'> <%= "#{t('coach')}" %>:<%= @coach %></p>
+    <p class='cap'><%= "#{t('cap')}" %>: <%= @capitan %></p>
+    <p class='year'><%= "#{t('year_of_creation')}" %>: <%= @year %></p>
+   <%= button_to "#{t('exit')}", root_path, class: "back_to_all btn btn-outline-primary", method: :get %>
   </div>
 </div>
