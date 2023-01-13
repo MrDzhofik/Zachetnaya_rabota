@@ -70,7 +70,6 @@ class MatchesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
   def filters
     @teams = Team.all
     @team_id = params[:team]

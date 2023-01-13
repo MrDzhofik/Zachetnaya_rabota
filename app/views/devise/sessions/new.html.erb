@@ -3,8 +3,6 @@
 
   <%= stylesheet_link_tag "login.css" %>
 
-
-
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field mb-3">
       <%= f.label :email, class: 'login_text form-label' %><br />
@@ -35,4 +33,7 @@
 
   <%= render "devise/shared/links" %>
 </div>
+
+<p class="notice"><%= notice %>
+<p class="alert"><%= alert %>
 

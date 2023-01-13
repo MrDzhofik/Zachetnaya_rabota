@@ -1,0 +1,76 @@
+{
+  "id": "191a34dc-0838-4a14-8833-abfc4e6e2e1b",
+  "version": "2.0",
+  "name": "zachet",
+  "url": "localhost:3000",
+  "tests": [{
+    "id": "c3c63cd1-0f63-4e90-961b-45cbd87ecb24",
+    "name": "login_with_invalid_password",
+    "commands": [{
+      "id": "d61a488e-a58f-4793-9841-d8d25c7813c7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fbad2a5f-b57b-45af-a2ba-28e708e38dc1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=user_email",
+      "targets": [
+        ["id=user_email", "id"],
+        ["name=user[email]", "name"],
+        ["css=#user_email", "css:finder"],
+        ["xpath=//input[@id='user_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "anton@sobaka.com"
+    }, {
+      "id": "98ba51d4-110b-4fdd-996c-4830e33e8449",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=user_password",
+      "targets": [
+        ["id=user_password", "id"],
+        ["name=user[password]", "name"],
+        ["css=#user_password", "css:finder"],
+        ["xpath=//input[@id='user_password']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "809e4d41-2a9b-4a40-a862-7d7e246f9949",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2da006bb-07a9-4abc-9c74-1e4a76fe8b11",
+      "comment": "",
+      "command": "storeText",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "99864171-c757-4eb4-b8c5-a98256546151",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["localhost:3000"],
+  "plugins": []
+}
