@@ -23,24 +23,23 @@ class MatchController < ApplicationController
   #   @shtraf_udar = @match_stat[4].split
   # end
 
-  # def filters
-  #   @teams = Team.all
-  #   @team_id = params[:team]
-  #   @team_name = Team.find(@team_id)[:team_name] if @team_id
-  #   @years = params[:year]
-  #   @league = params[:league]
-  #   @place = params[:place]
-  #   @need_matches = Match
-  #   right_year if @years
-  #   right_league if @league
-  #   if @place == 'home'
-  #     search_home
-  #   else
-  #     search_guest
-  #   end
-  #   @array = @need_matches.count
-  #   p @array
-  # end
+  def filters
+    @teams = Team.all
+    @team_id = params[:team]
+    @team_name = Team.find(@team_id)[:team_name] if @team_id
+    @years = params[:year]
+    @league = params[:league]
+    @place = params[:place]
+    @need_matches = Match
+    right_year if @years
+    right_league if @league
+    if @place == 'home'
+      search_home
+    else
+      search_guest
+    end
+    @array = @need_matches.count
+  end
 
   private
 

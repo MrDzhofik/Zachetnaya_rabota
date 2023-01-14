@@ -15,17 +15,17 @@ class MatchesController < ApplicationController
   end
 
   # GET /matches/1 or /matches/1.json
-  # def show
-  #   @match = Match.find(params[:id])
-  #   @match_stat = @match[:statistic].split(', ')
-  #   @sop1 = Team.find(@match[:sop1_id])
-  #   @sop2 = Team.find(@match[:sop2_id])
-  #   @vlad = @match_stat[0].split
-  #   @udar_v_stvor = @match_stat[1].split
-  #   @udar_mimo = @match_stat[2].split
-  #   @ugol_udar = @match_stat[3].split
-  #   @shtraf_udar = @match_stat[4].split
-  # end
+  def show
+    @match = Match.find(params[:id])
+    @match_stat = @match[:statistic].split(', ')
+    @sop1 = Team.find(@match[:sop1_id])
+    @sop2 = Team.find(@match[:sop2_id])
+    @vlad = @match_stat[0].split
+    @udar_v_stvor = @match_stat[1].split
+    @udar_mimo = @match_stat[2].split
+    @ugol_udar = @match_stat[3].split
+    @shtraf_udar = @match_stat[4].split
+  end
 
   def new
     @match = Match.new
