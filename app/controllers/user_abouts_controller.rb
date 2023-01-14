@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# user_about controller
 class UserAboutsController < ApplicationController
-  before_action :set_user_about, only: %i[ show edit update destroy ]
+  before_action :set_user_about, only: %i[show edit update destroy]
 
   # GET /user_abouts or /user_abouts.json
   def index
@@ -7,8 +10,7 @@ class UserAboutsController < ApplicationController
   end
 
   # GET /user_abouts/1 or /user_abouts/1.json
-  def show
-  end
+  def show; end
 
   # GET /user_abouts/new
   def new
@@ -16,10 +18,7 @@ class UserAboutsController < ApplicationController
   end
 
   # GET /user_abouts/1/edit
-  def edit
-    user_id = params[:user_id]
-    team_id = params[:team_id]
-  end
+  def edit; end
 
   # POST /user_abouts or /user_abouts.json
   def create
@@ -27,7 +26,7 @@ class UserAboutsController < ApplicationController
 
     respond_to do |format|
       if @user_about.save
-        format.html { redirect_to user_about_url(@user_about), notice: "User about was successfully created." }
+        format.html { redirect_to user_about_url(@user_about), notice: 'User about was successfully created.' }
         format.json { render :show, status: :created, location: @user_about }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +39,7 @@ class UserAboutsController < ApplicationController
   def update
     respond_to do |format|
       if @user_about.update(user_about_params)
-        format.html { redirect_to root_path, notice: "User about was successfully updated." }
+        format.html { redirect_to root_path, notice: 'User about was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user_about.errors, status: :unprocessable_entity }
@@ -53,19 +52,20 @@ class UserAboutsController < ApplicationController
     @user_about.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_abouts_url, notice: "User about was successfully destroyed." }
+      format.html { redirect_to user_abouts_url, notice: 'User about was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_about
-      @user_about = UserAbout.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_about_params
-      params.require(:user_about).permit(:fav_club, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_about
+    @user_about = UserAbout.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_about_params
+    params.require(:user_about).permit(:fav_club, :image)
+  end
 end

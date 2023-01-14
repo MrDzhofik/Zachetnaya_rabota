@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# user controller
 class UserController < ApplicationController
   def profile
     @curr_user = User.find(params[:id])
